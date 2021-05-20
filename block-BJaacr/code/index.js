@@ -19,17 +19,17 @@ Hint: (Structure of got variable)
 */
 
 // 1. Log the value of key "houses"
-
+console.log(got.houses);
 // 2. Log the length of the "houses" key
-
+console.log(got.houses.length);
 // 3. Log the name of all houses in got one by one
 
 // 4. Log the name of all the people in house Starks (index 0) one by one
-
+console.log(got.houses[0].people);
 // 5. Log the name of all the people in house Lannisters (index 1) one by one
-
+console.log(got.houses[1].people);
 // 6. Log the description of all the people in house Lannisters (index 1) one by one
-
+console.log(got.houses[1].description);
 // 7. Log the name and description of all the people in house Lannisters (index 1) one by one like `I am [name] and my bio is [description]`
 
 // 8. Log the name and description of all the people in house Starks (index 0) one by one like `I am [name] and my bio is [description]`
@@ -47,7 +47,7 @@ Hint: (Structure of got variable)
 // 14. Add the name and size of people in an object like {Starks: 4, Lannisters: 6} and log the object
 
 // 15. Log the name of all the people of all the houses in got one by one
-
+console.log(got.houses.name);
 // 16. Push all names into a new array named `allPeople` and log the value array.
 
 // 17. Log the value and length of `allPeople` array created above
