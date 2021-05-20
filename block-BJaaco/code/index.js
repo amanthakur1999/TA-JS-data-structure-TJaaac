@@ -3,21 +3,29 @@ let numbers = [6, 8, 10, 12, 43, 56, 98];
 let userIds = [1230, 234, 1278, 984, 763, 900];
 
 // 1. Add all the values of numbers and userIds array into the new newly created array named `collection`
-
-// 2. Add all the even numbers from both arrays numbers and userIds into a newly created array named `evenCollection`
-
-// 3. Add all the odd numbers from both arrays numbers and userIds into a newly created array named `oddCollection`
-let collection=[numbers ,userIds]
-console.log(collection);
-let evenCollection=[],oddCollection= [];
-for(let collections of collection) {
-  if (collections%2===0){
-    evenCollection.push(collections)
-  }else{
-    oddCollection.push(collections)
-  }
+let collection=[];
+for(let num of numbers){
+  collection.push(num);
 }
-console.log(evenCollection);
+for (let id of userIds){
+  collection.push(id);
+}
+console.log(collection);
+// 2. Add all the even numbers from both arrays numbers and userIds into a newly created array named `evenCollection`
+let evenCollection=[];
+ for (let num of collection){
+   if(num%2===0){
+     evenCollection.push(num)
+   }
+ }
+// 3. Add all the odd numbers from both arrays numbers and userIds into a newly created array named `oddCollection`
+let oddCollection=[];
+ for (let num of collection){
+   if(num%2!==0){
+     oddCollection.push(num)
+   }
+ }
+ console.log(evenCollection,oddCollection);
 
 /*
   @param means parameter
@@ -89,19 +97,29 @@ console.log(revert(['Ryan', 'John', 'Bran'])); //['Bran', 'John', 'Ryan']
     clear(['a', undefined, 'd', 0,  'c', 'b']); // ['b', 'c', 'd', 'a']
     clear(['Ryan', null, 0,  'John', 'Bran']); //['Bran', 'John', 'Ryan']
 */
-
-function clear( arr) {
-  let newArray=[];
-  if(arr==true){
-    
-  }
+function isUnwanted(value){
+  return value== false||
+  value == null||
+  value == undefined ||
+  value == "" ||
+  value == 0
 
 }
 
+function clear( arr) {
+  let newArray=[];
+  for( let value of arr){
+    if (!isUnwanted(value)){
+      newArray.push(value);
+    }
+  }
+ return newArray
+}
+
 // Uncomment the code below and test the output
-// console.log(clear([1, 2, 3, 4, '', 0, null, undefined])); // [4, 3, 2, 1]
-// console.log(clear(['a', undefined, 'd', 0, 'c', 'b'])); // ['b', 'c', 'd', 'a']
-// console.log(clear(['Ryan', null, 0, 'John', 'Bran'])); //['Bran', 'John', 'Ryan']
+console.log(clear([1, 2, 3, 4, '', 0, null, undefined])); // [4, 3, 2, 1]
+console.log(clear(['a', undefined, 'd', 0, 'c', 'b'])); // ['b', 'c', 'd', 'a']
+console.log(clear(['Ryan', null, 0, 'John', 'Bran'])); //['Bran', 'John', 'Ryan']
 
 /*
 
